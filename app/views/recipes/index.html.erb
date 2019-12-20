@@ -15,15 +15,20 @@
   </thead>
 
   <tbody>
-    <% @recipes.each do |recipe| %>
+    <% @recipes.each do |recipe| %> 
       <tr>
         <td><%= recipe.title %></td>
         <td><%= recipe.author.first_name%></td>
         <td><%= recipe.difficulty %></td>
-        <td><%= recipe.ingredients %></td>
+        <td> 
+          <% recipe.ingredients.each do |ingredient| %>
+          <%= ingredient.name %>  
+          <% end %>
+        </td>
         <td><%= recipe.comment %></td>
         <td><%= link_to 'Show Author', [@author] %></td>
         <td><%= link_to 'show ingredients', recipe_ingredients_path(recipe) %></td>
+        <td><%= link_to 'add ingredients', new_recipe_ingredient_path(recipe) %></td>
         <td><%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe) %></td>
         <td><%= link_to 'Destroy', [@author, recipe], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

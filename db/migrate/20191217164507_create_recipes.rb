@@ -4,7 +4,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :author
       t.string :difficulty
-      t.string :ingredients
+      t.string:ingredients
       t.text :comment
 
       t.timestamps

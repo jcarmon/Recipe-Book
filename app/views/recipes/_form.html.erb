@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :difficulty %>
-    <%= form.text_field :difficulty %>
+    <%= select(:recipe, :difficulty, [['Easy'], ['Intermediate'],['Pro'],['Chef']]) %>
   </div>
 
   <div class="field">
